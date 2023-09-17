@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Tesseract from 'tesseract.js';
+	Tesseract.recognize('https://cdn.discordapp.com/attachments/769169118980734996/1153043192065831043/20230917_200524.jpg', 'ces', {
+		logger: (m) => console.log(m)
+	}).then(({ data: { text } }) => {
+		console.log(text);
+	});
+</script>
+
+<header />
+
+<main />
+<footer>
+	Vytvořil <a href="https://github.com/ostSTRUPpen">ostSTRUPpen</a>
+</footer>
+
+<style>
+</style>
