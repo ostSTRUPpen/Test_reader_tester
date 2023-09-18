@@ -7,6 +7,16 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+	namespace UsedTypes {
+		type questionObject = {
+			[q: string]: string;
+			[a1: string]: string;
+			[a2: string]: string;
+			[a3: string]: string;
+			[a4: string]: string;
+			rightnes: Array<boolean>;
+		};
+	}
 }
 
 export {};

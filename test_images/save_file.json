@@ -1,0 +1,54 @@
+[
+	{
+		"q": "454. Zásobní látkou hub je:",
+		"a1": "škrob a glykogen",
+		"a2": "glykogen a olej",
+		"a3": "olej a škrob",
+		"a4": "škrob, olej a glykoge",
+		"rightnes": [
+			false,
+			true,
+			false,
+			false
+		]
+	},
+	{
+		"q": "455. Spojováním buněk hub (Fungi) vznikají:",
+		"a1": "nepravá pletiva",
+		"a2": "hyfy",
+		"a3": "mycelium",
+		"a4": "pseudoparenchym",
+		"rightnes": [
+			true,
+			true,
+			true,
+			true
+		]
+	},
+	{
+		"q": "456. Retroviry:",
+		"a1": "obsahují jednořetězcovou RNA",
+		"a2": "obsahují dvouřetězcovou DNA",
+		"a3": "obsahují rRNA.",
+		"a4": "pomocí zpětné transkriptázy syntetizují komplementární DNA v infikovaných buňkách",
+		"rightnes": [
+			true,
+			false,
+			false,
+			true
+		]
+	},
+	{
+		"q": "457. Algologie je vědní obor zabývající se studiem:",
+		"a1": "lišejníků",
+		"a2": "trav",
+		"a3": "řas",
+		"a4": "mechorostů",
+		"rightnes": [
+			false,
+			false,
+			true,
+			false
+		]
+	}
+]

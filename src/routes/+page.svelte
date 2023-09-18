@@ -1,58 +1,56 @@
 <script lang="ts">
-    // Tesseract
-    import Tesseract from 'tesseract.js';
+	import ImageLoading from '$lib/components/ImageLoading.svelte';
 
+	let imageData: Array<UsedTypes.questionObject> = [];
+	let allData: Array<UsedTypes.questionObject> = [];
+	let hidden = true;
+	$: {
+		allData.push(...imageData);
+		console.log(allData);
 
-    let readingProgress = 0;
-    let processedData;
+		if (allData.length > 0) {
+			hidden = false;
+		} else {
+			hidden = true;
+		}
+	}
+	/**
+	 * //TODO
+	
+	 * Umožnit nahrání json souboru - přidání nových dat z obrázků k json atd...
+	 * Vytvořit stránku pro zobrazení otázek (nahraje se soubor a zobrazí otázky)
+	 */
+	function download() {
+		let data, file, filename, link;
+		file = 'data:text/json;charset=utf-8,' + JSON.stringify(allData);
 
-    // OCR image
-    function readImage(imgURL: string) {
-	Tesseract.recognize(imgURL, 'ces', {
-		logger: (m) => readingProgress = m.progress*100
-	}).then(({ data: { text } }) => {
-		processedData = processData(text)
-	});}
-    // Načtení obrázku
-    function loadFile(event) {
-	    const image: HTMLImageElement = document.getElementById('output');
-	    image.src = URL.createObjectURL(event.target.files[0]);
-        readImage(image?.src)
-    };
-    // Zpracování textu
-    function processData(rawReadData: string){
-        let sentences = rawReadData.split("\n")
-        //TODO regex, co nejdříve pozná otázku "####. text :""
-        //TODO regex, co oddělí písmeno od odpovědi "x)
-        //TODO podle kapitalizace x) určí správnou/špatnou odpověď
-        //TODO vytvoří objekt, kde bude Otázka, 4 odpovědi (i s písmenem, která budou všechny malá), true/false v závislosti na správnosti odpovědi
-        //console.log(sentences)
-        /**
-         * 454. Zásobní látkou hub je:
-         * a) škrob a glykogen
-         * B) glykogen a olej
-         * c) olej a škrob
-         * d) škrob, olej a glykoge
-         * 455. Spojováním buněk hub (Fungi) vznikají:
-         * A) nepravá pletiva
-         * B) hyfy
-         * C) mycelium
-         * D) pseudoparenchym
-        */
-    }
+		/*        var file = {
+            data: stockData
+        };
+        if (file == null) return;
+*/
+		filename = 'save_file.json';
+
+		//        if (!file.match(/^data:text\/file/i)) {
+		//           file = 'data:text/json;charset=utf-8,' + file;
+		//       }
+		data = encodeURI(file);
+
+		link = document.createElement('a');
+		link.setAttribute('href', data);
+		link.setAttribute('download', filename);
+		link.click();
+	}
 </script>
 
 <header />
 
-<main>
-    <p><input type="file"  accept="image/*" name="image" id="file"  on:change={() => loadFile(event)} style="display: none;"></p>
-<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-<p><img id="output" width="200" /></p> 
-<progress id="readingFile" value={readingProgress} max="100">{readingProgress}%</progress>
+<main id="main">
+	<ImageLoading bind:processedData={imageData} />
+
+	<!-- svelte-ignore a11y-invalid-attribute -->
+	<a href="#" on:click={download} {hidden}>Download JSON</a>
 </main>
 <footer>
 	Vytvořil <a href="https://github.com/ostSTRUPpen">ostSTRUPpen</a>
 </footer>
-
-<style>
-</style>
