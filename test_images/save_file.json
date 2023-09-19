@@ -1,24 +1,206 @@
 [
 	{
-		"q": "454. Zásobní látkou hub je:",
-		"a1": "škrob a glykogen",
-		"a2": "glykogen a olej",
-		"a3": "olej a škrob",
-		"a4": "škrob, olej a glykoge",
-		"rightnes": [
+		"q": "400. Prokaryotická buňka:",
+		"a1": "může obsahovat tylakoidy",
+		"a2": "obsahuje ribosomy",
+		"a3": "má na povrchu plasmatickou membránu",
+		"a4": "může obsahovat plastidy = *",
+		"rightness": [
+			true,
+			true,
+			true,
+			false
+		]
+	},
+	{
+		"q": "401. Ve virionu nacházíme:",
+		"a1": "tRNA-",
+		"a2": "rRNA",
+		"a3": "ribosomy",
+		"a4": "DNA nebo RNA",
+		"rightness": [
 			false,
+			false,
+			false,
+			true
+		]
+	},
+	{
+		"q": "402. Fototrofní bakterie:",
+		"a1": "mají bakteriochlorofyl",
+		"a2": "mají chloroplasty",
+		"a3": "produkují kyslík",
+		"a4": "používají k redukci COz molekulu H0",
+		"rightness": [
+			true,
+			false,
+			false,
+			false
+		]
+	},
+	{
+		"q": "403. Bakteriofág:",
+		"a1": "ničí buňky bakterií",
+		"a2": "umožňuje růst bakterií",
+		"a3": "fagocytuje bakterie",
+		"a4": "fagocytuje bílé krvinky",
+		"rightness": [
+			true,
+			false,
+			false,
+			false
+		]
+	},
+	{
+		"q": "404. Viry můžeme v laboratoři pěstovat:",
+		"a1": "naživých buňkách",
+		"a2": "na mrtvých buňkách",
+		"a3": "natekutých žívných půdách",
+		"a4": "napevných živných půdách",
+		"rightness": [
+			true,
+			false,
+			false,
+			false
+		]
+	},
+	{
+		"q": "405. Virion bakteriofága:",
+		"a1": "má bičík, pomocí něhož se pohybuje",
+		"a2": "může být ikozahedrický bez blčíku",
+		"a3": "může být složen z hlavičky a stažlivého bičíku",
+		"a4": "může být tyčinkovitý",
+		"rightness": [
+			false,
+			true,
+			true,
+			true
+		]
+	},
+	{
+		"q": "406. Bakteriofágy jsou viriony:",
+		"a1": "rostlinných virů",
+		"a2": "onkogenních virů :",
+		"a3": "bakteriálních virů",
+		"a4": "virů dětské obrny",
+		"rightness": [
+			false,
+			false,
+			true,
+			false
+		]
+	},
+	{
+		"q": "407. Polyvalentní bakteriofágy:",
+		"a1": "mají široké spektrum hostitelských kmenů",
+		"a2": "se používají k jemné typizaci patogenních bakterií",
+		"a3": "patří mezi ně polyoma virus",
+		"a4": "parazitují na sinicích",
+		"rightness": [
+			true,
+			false,
+			false,
+			false
+		]
+	},
+	{
+		"q": "408. Jako lytický cyklus se označuje průběh:",
+		"a1": "glykolýzy :",
+		"a2": "plazmolýzy",
+		"a3": "hemolýzy",
+		"a4": "žádná odpověď z ostatních není správná",
+		"rightness": [
+			false,
+			false,
+			false,
+			true
+		]
+	},
+	{
+		"q": "409. Bakterie mohou být:",
+		"a1": "autotrofní",
+		"a2": "heterotrofní",
+		"a3": "chemotrofní",
+		"a4": "fototrofní",
+		"rightness": [
+			true,
+			true,
+			true,
+			true
+		]
+	},
+	{
+		"q": "410. Jako fágy temperované označujeme:",
+		"a1": "profágy -",
+		"a2": "fágy mírné s",
+		"a3": "fágy virulentní",
+		"a4": "bakteriofágy prodělávající lyzogenní cyklus",
+		"rightness": [
+			false,
+			true,
+			false,
+			true
+		]
+	},
+	{
+		"q": "411. Malý virion obsahuje:",
+		"a1": "bílkovinný obal",
+		"a2": "nukleovou kyselinu",
+		"a3": "jádro",
+		"a4": "reverzní transkriptázu",
+		"rightness": [
+			true,
 			true,
 			false,
 			false
 		]
 	},
 	{
-		"q": "455. Spojováním buněk hub (Fungi) vznikají:",
-		"a1": "nepravá pletiva",
-		"a2": "hyfy",
-		"a3": "mycelium",
-		"a4": "pseudoparenchym",
-		"rightnes": [
+		"q": "412. Virová DNA:",
+		"a1": "kóduje strukturu kapsidu j",
+		"a2": "kóduje enzymy pro energetický metabolismus",
+		"a3": "se může stát součástí jaderného genomu buňky",
+		"a4": "tvoří chromosom obdobný eukaryotickému",
+		"rightness": [
+			true,
+			false,
+			true,
+			false
+		]
+	},
+	{
+		"q": "413. Kapsomery:",
+		"a1": "tvoří obal virové nukleové kyseliny",
+		"a2": "jsou identické strukturní jednotky",
+		"a3": "jsou z bílkovinných makromóolekul",
+		"a4": "jsou kódovány geny hostitelské buňky",
+		"rightness": [
+			true,
+			true,
+			true,
+			false
+		]
+	},
+	{
+		"q": "414. jako transfekci označujeme proces:",
+		"a1": "přenosu izolované RNA z viru do buněk",
+		"a2": "přenosu izolované DNA z viru do buněk",
+		"a3": "latentní virové infekce",
+		"a4": "nádorové transformace buněk",
+		"rightness": [
+			true,
+			true,
+			false,
+			false
+		]
+	},
+	{
+		"q": "415. Buněčné hybridy lze získat:",
+		"a1": "fúzí buněk stejných živočišných druhů",
+		"a2": "fúzí buněk různých živočišných druhů :",
+		"a3": "působením některých virů",
+		"a4": "působením některých chemikálií",
+		"rightness": [
 			true,
 			true,
 			true,
@@ -26,27 +208,27 @@
 		]
 	},
 	{
-		"q": "456. Retroviry:",
-		"a1": "obsahují jednořetězcovou RNA",
-		"a2": "obsahují dvouřetězcovou DNA",
-		"a3": "obsahují rRNA.",
-		"a4": "pomocí zpětné transkriptázy syntetizují komplementární DNA v infikovaných buňkách",
-		"rightnes": [
+		"q": "416. Provirusje:",
+		"a1": "formou začlenění DNA infikujícího tkáňového virionu do chrómosomu napadené buňky",
+		"a2": "formou začlenění DNA bakterie do DNA bakteriofága",
+		"a3": "obdobou profága u bakteriofágů = -",
+		"a4": "výrazem pro virion bez kapsidy",
+		"rightness": [
 			true,
 			false,
-			false,
-			true
+			true,
+			false
 		]
 	},
 	{
-		"q": "457. Algologie je vědní obor zabývající se studiem:",
-		"a1": "lišejníků",
-		"a2": "trav",
-		"a3": "řas",
-		"a4": "mechorostů",
-		"rightnes": [
-			false,
-			false,
+		"q": "417. K nádorové transformaci může vést:",
+		"a1": "působení některých DNA virů",
+		"a2": "infekce onkogenními viry",
+		"a3": "infekce retroviry",
+		"a4": "infekce bakteriofágy",
+		"rightness": [
+			true,
+			true,
 			true,
 			false
 		]

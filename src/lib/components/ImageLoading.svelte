@@ -11,10 +11,6 @@
 	let readingProgress = 0;
 	export let processedData: Array<UsedTypes.questionObject> = [];
 
-	$: {
-		console.log(processedData);
-	}
-
 	// OCR image
 	function readImage(imgURL: string) {
 		stateText = 'Čtu text';
@@ -44,7 +40,7 @@
 		 * a) škrob a glykogen
 		 * B) glykogen a olej
 		 * c) olej a škrob
-		 * d) škrob, olej a glykoge
+		 * d) škrob, olej a glykogen
 		 * 455. Spojováním buněk hub (Fungi) vznikají:
 		 * A) nepravá pletiva
 		 * B) hyfy
@@ -64,7 +60,7 @@
 				a2: '',
 				a3: '',
 				a4: '',
-				rightnes: []
+				rightness: []
 			};
 			if (sentences[i].length <= 1) {
 				continue;
@@ -75,10 +71,11 @@
 				questionObject.q = sentences[i];
 				listOfQuestions.push(questionObject);
 			} else if (answerRegex.test(sentences[i])) {
+				if (answerPointer > 4) continue;
 				if (rightAnswerRegex.test(sentences[i][0])) {
-					listOfQuestions[objectPointer].rightnes.push(true);
+					listOfQuestions[objectPointer].rightness.push(true);
 				} else {
-					listOfQuestions[objectPointer].rightnes.push(false);
+					listOfQuestions[objectPointer].rightness.push(false);
 				}
 				listOfQuestions[objectPointer][`a${answerPointer}`] = sentences[i].replace(/^\w\) /, '');
 				answerPointer++;
@@ -93,15 +90,9 @@
 <div id="outer">
 	<div id="inner">
 		<br />
-		<label id="input_label" for="file" style="cursor: pointer;">Nahrát obrázek</label>
-		<input
-			type="file"
-			accept="image/*"
-			name="image"
-			id="file"
-			on:change={loadFile}
-			style="display: none;"
-		/>
+		<label id="input_label" for="file" style="cursor: pointer;">Nahrajte obrázek (png/jpg)</label>
+		<br />
+		<input type="file" accept="image/*" name="image" id="file" on:change={loadFile} />
 		<br />
 		<br />
 		<label for="output">Náhled:</label>
@@ -116,9 +107,6 @@
 </div>
 
 <style>
-	#input_label {
-		outline: 1px solid black;
-	}
 	#outer {
 		outline: 1px solid black;
 	}

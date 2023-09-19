@@ -14,7 +14,7 @@ declare global {
 			[a2: string]: string;
 			[a3: string]: string;
 			[a4: string]: string;
-			rightnes: Array<boolean>;
+			rightness: Array<boolean>;
 		};
 	}
 }
