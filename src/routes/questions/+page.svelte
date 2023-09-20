@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Question from '$lib/components/Question.svelte';
 	import UploadJsonFile from '$lib/components/UploadJSONFile.svelte';
 
@@ -19,7 +20,7 @@
 	<summary>Návod k použití</summary>
 	<p>
 		Nejdříve je potřeba soubor "save_file.json", který lze vytvořit a stáhnout <a
-			href="/data_creation">zde</a
+			href="{base}/data_creation">zde</a
 		>!
 	</p>
 	<ol>

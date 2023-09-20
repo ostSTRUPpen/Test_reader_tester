@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import ImageLoading from '$lib/components/ImageLoading.svelte';
 	import UploadJsonFile from '$lib/components/UploadJSONFile.svelte';
 
@@ -59,7 +60,9 @@
 			pro nahrání obrázku
 		</li>
 		<li>Když máte nahrané všechny obrázky, klikněte na "Stáhnout save_file.json".</li>
-		<li>Po stažení "save_file.json" se můžete přesunout na <a href="/questions">otázky</a></li>
+		<li>
+			Po stažení "save_file.json" se můžete přesunout na <a href="{base}/questions">otázky</a>
+		</li>
 	</ol>
 </details>
 
