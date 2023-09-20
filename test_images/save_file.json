@@ -232,5 +232,31 @@
 			true,
 			false
 		]
+	},
+	{
+		"q": "454. Zásobní látkou hub je:",
+		"a1": "škrob a glykogen",
+		"a2": "glykogen a olej",
+		"a3": "olej a škrob",
+		"a4": "škrob, olej a glykoge",
+		"rightness": [
+			false,
+			true,
+			false,
+			false
+		]
+	},
+	{
+		"q": "455. Spojováním buněk hub (Fungi) vznikají:",
+		"a1": "nepravá pletiva",
+		"a2": "hyfy",
+		"a3": "mycelium",
+		"a4": "pseudoparenchym",
+		"rightness": [
+			true,
+			true,
+			true,
+			true
+		]
 	}
 ]

@@ -8,6 +8,9 @@
 
 	let stateText = 'Čekám na obrázek';
 
+	let issues: number = 0;
+	let showErrors: boolean = false;
+
 	let readingProgress = 0;
 	export let processedData: Array<UsedTypes.questionObject> = [];
 
@@ -23,7 +26,7 @@
 	}
 	// Načtení obrázku
 	function loadFile($ev: Event) {
-		//TODO možná předělat na foreach (https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+		issues = 0;
 		stateText = 'Načítám obrázek';
 		//@ts-ignore
 		const image: HTMLImageElement = document.getElementById('output');
@@ -35,18 +38,6 @@
 	function functionToProcessData(rawReadData: string): Array<UsedTypes.questionObject> {
 		stateText = 'Upravuji text';
 		let sentences = rawReadData.split('\n');
-		/**
-		 * 454. Zásobní látkou hub je:
-		 * a) škrob a glykogen
-		 * B) glykogen a olej
-		 * c) olej a škrob
-		 * d) škrob, olej a glykogen
-		 * 455. Spojováním buněk hub (Fungi) vznikají:
-		 * A) nepravá pletiva
-		 * B) hyfy
-		 * C) mycelium
-		 * D) pseudoparenchym
-		 */
 
 		let listOfQuestions: Array<UsedTypes.questionObject> = [];
 		let objectPointer = -1;
@@ -80,10 +71,18 @@
 				listOfQuestions[objectPointer][`a${answerPointer}`] = sentences[i].replace(/^\w\) /, '');
 				answerPointer++;
 			} else {
+				issues++;
 				console.error(sentences[i]);
 			}
 		}
 		return listOfQuestions;
+	}
+	$: {
+		if (issues > 0) {
+			showErrors = true;
+		} else {
+			showErrors = false;
+		}
 	}
 </script>
 
@@ -103,6 +102,7 @@
 			>{readingProgress}%</progress
 		>
 		<p id="status">{stateText}</p>
+		<p id="errorDisplay" hidden={!showErrors}><b>Došlo k chybě! ({issues}x)</b></p>
 	</div>
 </div>
 
@@ -112,5 +112,9 @@
 	}
 	#inner {
 		padding-left: 10px;
+	}
+	#errorDisplay {
+		color: red;
+		font-size: larger;
 	}
 </style>
